@@ -3,6 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   $('h1').css('color', 'red')
-  $('head').append('<style>body {display:none;}')
-  $('body').delay(1200).fadeIn(1200)
-  $('body').delay(1200).fadeOut(1200)
+  #$('head').append('<style>body {display:none;}')
+  #$('body').delay(1200).fadeIn(1200)
+  #$('body').delay(1200).fadeOut(1200)
