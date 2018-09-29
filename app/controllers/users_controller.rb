@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       @users = User.where(name: params[:name]).where(age: params[:age])
       flash[:message] = "該当なし" if params[:name].blank?
     else
-      @users = User.All
+      @users = User.all
     end
   end
 
