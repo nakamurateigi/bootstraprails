@@ -14,33 +14,35 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= image_tag user.image.to_s %></td>
         <td><%= user.created_at %></td>
         <td><%= user.name %></td>
         <td><%= user.age %></td>
-        <td><%= link_to 'Show', user, class: "btn btn-primary" %></td>
-        <td><%= link_to 'Edit', edit_user_path(user), class: "btn btn-success" %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <td><%= link_to 'Show', user, class: "btn btn-primary", style: "margin: 5px;" %></td>
+        <td><%= link_to 'Edit', edit_user_path(user), class: "btn btn-success", style: "margin: 5px;" %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", style: "margin: 5px;" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<%= flash[:message] %>
 <br>
 
-<%= link_to 'New User', new_user_path, class: "btn btn-light" %>
-<%= link_to "hogehoge", posts_path %> 
 </div>
 <div class="col-md-4">
-          <div class="list-group">
-            <a href="#" class="list-group-item active">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-          </div>
+  <!-- ここ  -->
+  <img src="/hogehoge.jpg" alt="hoge" class="img-thumbnail">
+  <br>
+　<img src="/hogehoge.jpg" alt="hoge" class="img-thumbnail">
+  <br><br>
+  <!-- ここ -->
+  <div class="list-group">
+    <a href="#" class="list-group-item active">テキストテキストテキスト</a>
+    <a href="#" class="list-group-item">テキストテキストテキスト</a>
+    <a href="#" class="list-group-item">テキストテキストテキスト</a>
+    <a href="#" class="list-group-item">テキストテキストテキスト</a>
+    <a href="#" class="list-group-item">テキストテキストテキスト</a>
+    <a href="#" class="list-group-item">テキストテキストテキスト</a>
+    <a href="#" class="list-group-item">テキストテキストテキスト</a>
+  </div>
 </div>

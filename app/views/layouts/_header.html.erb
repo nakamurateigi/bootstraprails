@@ -12,8 +12,28 @@
   
   <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav">
-      <li><a href="#">home</a></li>
-      <li><a href="#">about</a></li>
+      <li><a href="/users">home</a></li>
+      <li><%= link_to 'New User', new_user_path %></li>
+      <li>
+        <%= form_tag(users_path, method: "get", class: "navbar-form navbar-left") do %>
+          <% 
+          list = {
+            "1歳" => "1",
+            "2歳" => "2",
+            "3歳" => "3",
+            "4歳" => "4",
+            "5歳" => "5",
+            "6歳" => "6",
+            "7歳" => "7"
+          }
+          %>
+          <%= select_tag :age, options_for_select(list), class: "form-control", prompt: "選択してください" %>
+          ×
+          <%= text_field_tag :name, "" ,class: "form-control", placeholder: "name" %>
+          <%= submit_tag '検索', class: "btn btn-default" %>
+        <% end %>
+      </li>
+    </ul>
   </div>
 </div>
 </nav>

@@ -4,7 +4,12 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if params[:name] && params[:age]
+      @users = User.where(name: params[:name]).where(age: params[:age])
+      flash[:message] = "該当なし" if params[:name].blank?
+    else
+      @users = User.All
+    end
   end
 
   # GET /users/1
@@ -69,6 +74,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :age)
+      params.require(:user).permit(:name, :age, :image)
     end
 end
