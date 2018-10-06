@@ -33,6 +33,14 @@
           <%= submit_tag '検索', class: "btn btn-default" %>
         <% end %>
       </li>
+      <% if login_signed_in? %>
+        <strong><%= link_to current_login.loginname, "/" %></strong>
+          <li><%= link_to 'プロフィール変更', edit_login_registration_path %></li>
+          <li><%= link_to 'ログアウト', destroy_login_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'サインアップ', new_login_registration_path %></li>
+        <li><%= link_to 'ログイン', new_login_session_path %></li>
+      <% end %>
     </ul>
   </div>
 </div>

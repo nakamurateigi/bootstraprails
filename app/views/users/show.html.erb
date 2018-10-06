@@ -10,5 +10,12 @@
   <%= @user.age %>
 </p>
 
+<%= form_tag(url_for(:action => 'show'), :remote => true) do %>
+  <h1><%= button_tag type: "submit", class: "btn btn-primary" do %>
+    <i class="fas fa-thumbs-up"></i><% end %></h1>
+  <%= hidden_field_tag :loginname, "hoge" %>
+
+<% end %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
